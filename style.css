@@ -1,0 +1,116 @@
+/* ==============================
+   TELAS GRANDES - a partir de 1025px
+   ============================== */
+@media (min-width: 1025px) {
+
+    /* HEADER */
+    header {
+        background: var(--cor-principal);
+        color: var(--cor-secundaria);
+        padding: 25px 40px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 5px solid var(--cor-destaque);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    #titulo-principal {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    /* MENU */
+    #menu {
+        display: flex;
+        gap: 40px;
+    }
+
+    #menu a {
+        color: var(--cor-secundaria);
+        font-size: 1.6rem;
+        transition: all 0.3s ease;
+    }
+
+    #menu a:hover {
+        color: var(--cor-destaque);
+        transform: scale(1.15);
+    }
+
+    /* TÍTULOS */
+    .titulo h1 {
+        font-size: 2rem;
+        margin: 40px 0 20px;
+        color: var(--cor-principal);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-left: 8px solid var(--cor-energia);
+        padding-left: 15px;
+    }
+
+    /* LAYOUT GERAL */
+    main {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    /* IMAGENS E TEXTOS EM DUAS COLUNAS */
+    .img, .texto {
+        display: inline-block;
+        vertical-align: top;
+        width: 48%;
+    }
+
+    .img img {
+        width: 100%;
+        border-radius: 18px;
+        border: 4px solid var(--cor-principal);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease;
+    }
+
+    .img img:hover {
+        transform: scale(1.05);
+    }
+
+    /* TEXTOS */
+    .texto {
+        padding: 20px;
+    }
+
+    .texto p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        text-align: justify;
+        background: var(--cor-secundaria);
+        padding: 20px;
+        border-radius: 15px;
+        border-left: 8px solid var(--cor-principal);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    /* ANIMAÇÕES */
+    .titulo h1, .texto p {
+        animation: fadeInUp 1s ease both;
+    }
+
+    /* Estado inicial */
+    .titulo, .texto, .img {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 0.8s ease;
+    }
+
+    /* Quando animado */
+    .animado {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}

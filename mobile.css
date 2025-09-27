@@ -1,0 +1,145 @@
+/* ==============================
+   MOBILE.CSS - CORINTHIANS
+   ============================== */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* CORES */
+:root {
+    --cor-principal: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-destaque: #c9a227;
+    --cor-energia: #e30613;
+    --cinza-suave: #f2f2f2;
+}
+
+/* ESTILOS GERAIS (desktop/tablet podem herdar daqui) */
+body {
+    background: var(--cinza-suave);
+    color: var(--cor-principal);
+    line-height: 1.6;
+}
+
+/* ==============================
+   MOBILE - até 768px
+   ============================== */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        background: var(--cor-principal);
+        color: var(--cor-secundaria);
+        padding: 15px;
+        text-align: center;
+        border-bottom: 3px solid var(--cor-destaque);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    #titulo-principal {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* MENU */
+    #menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 8px 0;
+    }
+
+    #menu a {
+        color: var(--cor-secundaria);
+        font-size: 1.4rem;
+        transition: all 0.3s ease;
+    }
+
+    #menu a:hover {
+        color: var(--cor-destaque);
+        transform: scale(1.2);
+    }
+
+    /* TÍTULOS */
+    .titulo h1 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 20px 0 10px;
+        color: var(--cor-principal);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-left: 5px solid var(--cor-energia);
+        padding-left: 10px;
+    }
+
+    /* IMAGENS */
+    .img img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin: 10px 0;
+        border: 3px solid var(--cor-principal);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .img img:hover {
+        transform: scale(1.02);
+    }
+
+    /* TEXTOS */
+    .texto {
+        padding: 10px 15px;
+        margin-bottom: 15px;
+    }
+
+    .texto p {
+        font-size: 1rem;
+        text-align: justify;
+        background: var(--cor-secundaria);
+        padding: 12px;
+        border-radius: 10px;
+        border-left: 5px solid var(--cor-principal);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* ANIMAÇÕES */
+    .titulo h1, .texto p {
+        animation: fadeInUp 0.8s ease both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Estado inicial */
+    .titulo, .texto, .img {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 0.8s ease;
+    }
+
+    /* Quando animado */
+    .animado {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
